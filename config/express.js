@@ -1,6 +1,7 @@
 var express = require('express');
 var load = require('express-load');
 var bodyParser = require('body-parser');
+var expressValidator = require('express-validator');
 
 module.exports = function() {
 
@@ -14,6 +15,8 @@ module.exports = function() {
   app.use(bodyParser.urlencoded({extended: true}));
   //adicionando um novo midware para fazer o parse das requisicoes feitas em json
   app.use(bodyParser.json());
+  app.use(expressValidator());
+
   load('routes', {cwd: 'app'})
   .then('infra')
   .into(app);

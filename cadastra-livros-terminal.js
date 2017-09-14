@@ -18,8 +18,8 @@ var client = http.request(configuracoes, function(res) {
 });
 
 var produto = {
-  titulo: 'mais sobre node',
-  descricao:'node,....',
+  titulo: '',
+  descricao: '',
   preco:100
 };
 
